@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
 import store from "./config/Config.reducers";
+import 'bootstrap/dist/css/bootstrap.css';
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

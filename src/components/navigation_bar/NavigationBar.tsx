@@ -1,5 +1,5 @@
 //  Region Import External Lib (e.g React, Reactstrap, etc)
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 //  Region Import Constants
 
 //  Region Import Interfaces
@@ -13,7 +13,7 @@ import React, { Component } from "react";
 //  Region Import Assets
 
 //  Region Import Style
-import "./NavigationBar.css";
+import "./NavigationBar.scss";
 
 const NavigationBar = () => {
   //  react lifecycle (componentDidMount, componentDidUpdate, getDerivedStateFromProps, etc)
@@ -28,7 +28,15 @@ const NavigationBar = () => {
 
   // other variables if needed
 
-  return <div>Example Component</div>;
+  return (
+    <Fragment>
+      <div className="p-3 navbar-background">
+        <div>
+          a
+        </div>
+      </div>
+    </Fragment>
+  );
 };
 
 // mapStateToProps here if needed
