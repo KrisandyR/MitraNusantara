@@ -18,7 +18,6 @@
 }
 
 .navbar-hamburg-icon {
-    display: none;
     cursor: pointer;
     transition: 500ms;
 }
@@ -60,16 +59,29 @@
 
 // EDF7F6
 
-.navbar-dropdown {
+.navbar-dropdown-container {
     left: 0;
     top: 100%;
     position: absolute;
     width: 100%;
+    transition: 500ms;
+}
+
+.navbar-dropdown {
     background-color: #318ce7;
     color: #FFFFFF;
     font-size: 18px;
-    transition: 500ms;
 }
+
+// outer area for navbar
+
+// .outer-area-navbar-dropdown {
+//     position: sticky;
+//     width: 100%;
+//     height: 69vh;
+//     overflow: hidden;
+//     background-color: aqua;
+// }
 
 .navbar-dropdown-item {
     cursor: pointer;
@@ -84,12 +96,12 @@
     font-size: 20px;
 }
 
-@media only screen and (max-width: 1200px){
-    .navbar-hamburg-icon {
-        display: block;
-    }
-    .navbar-options-container {
-        display: none;
-    }
+// @media only screen and (max-width: 1200px){
+//     .navbar-hamburg-icon {
+//         display: block;
+//     }
+//     .navbar-options-container {
+//         display: none;
+//     }
 
-}
+// }
