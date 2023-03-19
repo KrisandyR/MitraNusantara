@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import './App.scss';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import NavigationBar from './components';
+import Home from './views/home';
 
 function App() {
   return (
@@ -10,9 +11,7 @@ function App() {
         <NavigationBar />
         <Switch>
           <Route path={"/"} exact>
-            <div>
-              Hee hee hee ha
-            </div>
+            <Home />
           </Route>
           {/* Add new page here */}
           {/* <Route path={"/example"} exact>
