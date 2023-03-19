@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import './App.scss';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import NavigationBar from './components';
+import RecommendationPage from './views/recommendation_page';
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
             </div>
           </Route>
           {/* Add new page here */}
+          <Route path={"/recomPage"} exact>
+            <RecommendationPage/>
+          </Route>
           {/* <Route path={"/example"} exact>
             <Example />
           </Route> */}
