@@ -1,9 +1,95 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
 .navbar-background {
     width: 100%;
-    background-color: #00000099;
+    background-color: #FFFFFF;
     display: flex;
     justify-content: space-between;
-    color: white;
+    color: #02020B;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.20);
+    align-items: center;
+    position: relative;
+}
+
+.navbar-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 42px;
+    color: #318ce7;
+}
+
+.navbar-hamburg-icon {
+    display: none;
+    cursor: pointer;
+    transition: 500ms;
+}
+
+.navbar-hamburg-icon:hover {
+    // display: none;
+    background-color: #eaeaee;
+    border-radius: 10px;
+}
+
+.hamburg-img {
+    width: 28px;
+    height: 28px;
+}
+
+.navbar-options-container {
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+}
+
+
+.navbar-login-btn {
+    cursor: pointer;
+    background-color: #318ce7;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.20);
+    color: #FFFFFF;
+    border-radius: 10px;
+    transition: 500ms;
+}
+
+.navbar-login-btn:hover {
+    font-size: 22px;
+    background-color: #FFFFFF;
+    color: #02020B;
+    border: 1.5px solid #318ce7;
+}
+
+// EDF7F6
+
+.navbar-dropdown {
+    left: 0;
+    top: 100%;
+    position: absolute;
+    width: 100%;
+    background-color: #318ce7;
+    color: #FFFFFF;
+    font-size: 18px;
+    transition: 500ms;
+}
+
+.navbar-dropdown-item {
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px 20px;
+    text-align: center;
+    transition: 500ms;
+}
+
+.navbar-dropdown-item:hover {
+    background-color: #5fa6ec;
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 1200px){
+    .navbar-hamburg-icon {
+        display: block;
+    }
+    .navbar-options-container {
+        display: none;
+    }
+
 }
