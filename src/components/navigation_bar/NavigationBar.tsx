@@ -18,6 +18,7 @@ import hamburgericon from "../../assets/hamburger.png";
 //  Region Import Style
 import "./NavigationBar.scss";
 import { Collapse } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const useWindowSize = () => {
   // Initialize state with undefined width/height so server and client renders match
@@ -54,12 +55,17 @@ const NavigationBar = () => {
     <Fragment>
       <div className="p-3 navbar-background">
         <div className="d-flex align-items-center">
-          <span className="navbar-title px-3">Mitra Nusantara</span>
+          <Link to={"/"} style={{ textDecoration: "none" }}>
+            {" "}
+            <span className="navbar-title px-3">Mitra Nusantara</span>
+          </Link>
         </div>
 
         {windowSize.width > 1200 && (
           <div className="navbar-options-container px-3">
-            <div className="px-4">Home</div>
+            <Link to={"/"} style={{ textDecoration: "none", color: "black" }}>
+              <div className="px-4">Home</div>
+            </Link>
             <div className="px-4">About Us</div>
             <div className="px-4">Booking</div>
             <div className="px-4 py-2 mx-2 navbar-login-btn">Login</div>
@@ -79,7 +85,14 @@ const NavigationBar = () => {
             <Collapse in={dropdownIsOpen}>
               <div className="navbar-dropdown-container">
                 <div className="navbar-dropdown">
-                  <p className="navbar-dropdown-item m-0">Home</p>
+                  <Link
+                    to={"/"}
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    {" "}
+                    <p className="navbar-dropdown-item m-0">Home</p>
+                  </Link>
+
                   <p className="navbar-dropdown-item m-0">About Us</p>
                   <p className="navbar-dropdown-item m-0">Booking</p>
                   <p className="navbar-dropdown-item m-0">Login</p>

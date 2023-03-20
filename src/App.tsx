@@ -3,6 +3,8 @@ import './App.scss';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import NavigationBar from './components';
 import RecommendationPage from './views/recommendation_page';
+import Home from './views/home';
+import Packet from './views/packet-remove-later';
 
 function App() {
   return (
@@ -11,9 +13,10 @@ function App() {
         <NavigationBar />
         <Switch>
           <Route path={"/"} exact>
-            <div>
-              Hee hee hee ha
-            </div>
+            <Home />
+          </Route>
+          <Route path={"/packet"}>
+            <Packet />
           </Route>
           {/* Add new page here */}
           <Route path={"/recomPage"} exact>
