@@ -16,7 +16,8 @@ import Image from "react-bootstrap/Image";
 //  Region Import Style
 import "./Home.scss";
 import { Card, Col, Row } from "react-bootstrap";
-import { placeholderProductPage } from "./constants";
+import { placeholderProductPage, placeholderProductPageTwo } from "./constants";
+import searchbarbg from "../../assets/search-bar-bg.jpg";
 import star from "../../assets/star.png";
 
 const useWindowSize = () => {
@@ -60,22 +61,28 @@ const Home = () => {
   // other variables if needed
   const windowSize = useWindowSize();
 
-  return (
-    <Fragment>
-      <div className="p-4 home-page">
-        <div>
+  const renderFirstRow = () => {
+    const marginBottom = windowSize.width > 1200 ? 80 : 30;
+    return (
+      <Fragment>
+        <div style={{ marginBottom: marginBottom, marginTop: "25px" }}>
           <div className="product-row-header d-flex justify-content-between align-items-center mb-3">
             <p className="product-row-title m-0">Most popular attractions</p>
             <div className="px-4 py-2 product-row-sm-btn">Show More</div>
           </div>
           <div className="row-1-container">
             {placeholderProductPage.map((prd, prdIdx) => {
-              const imgWidth = windowSize.width > 1200 ? 400 : 250;
+              const imgWidth = windowSize.width > 1200 ? 350 : 250;
+              const imgHeight = windowSize.width > 1200 ? 218.75 : 156.25;
               return (
                 <div className="product-card">
                   <Card>
                     <div>
-                      <Image width={imgWidth} src={prd.img} />
+                      <Image
+                        width={imgWidth}
+                        height={imgHeight}
+                        src={prd.img}
+                      />
                     </div>
                     <div className="p-3">
                       <p
@@ -122,6 +129,123 @@ const Home = () => {
             })}
           </div>
         </div>
+      </Fragment>
+    );
+  };
+
+  const renderSecondRow = () => {
+    const marginBottom = windowSize.width > 1200 ? 80 : 30;
+    return (
+      <Fragment>
+        <div style={{ marginBottom: marginBottom }}>
+          <div className="product-row-header d-flex justify-content-between align-items-center mb-3">
+            <p className="product-row-title m-0">
+              Accomodations you might like
+            </p>
+            <div className="px-4 py-2 product-row-sm-btn">Show More</div>
+          </div>
+          <div className="row-1-container">
+            {placeholderProductPageTwo.map((prd, prdIdx) => {
+              const imgWidth = windowSize.width > 1200 ? 350 : 250;
+              const imgHeight = windowSize.width > 1200 ? 218.75 : 156.25;
+              return (
+                <div className="product-card">
+                  <Card>
+                    <div>
+                      <Image
+                        width={imgWidth}
+                        height={imgHeight}
+                        src={prd.img}
+                      />
+                    </div>
+                    <div className="p-3">
+                      <p
+                        className={
+                          "prdct-title" +
+                          (windowSize.width > 1200 ? "" : "-small")
+                        }
+                      >
+                        {prd.title}
+                      </p>
+                      <p
+                        className={
+                          "prdct-location" +
+                          (windowSize.width > 1200 ? "" : "-small")
+                        }
+                      >
+                        {prd.regency}, {prd.city}
+                      </p>
+
+                      <div className="d-flex align-items-center">
+                        <Image width={20} height={20} src={star} />
+                        <span
+                          className={
+                            "prdct-rating" +
+                            (windowSize.width > 1200 ? "" : "-small")
+                          }
+                        >
+                          {prd.rating} ({prd.ratingCount})
+                        </span>
+                      </div>
+
+                      <p
+                        className={
+                          "prdct-price" +
+                          (windowSize.width > 1200 ? "" : "-small")
+                        }
+                      >
+                        Rp. {prd.price}
+                      </p>
+                    </div>
+                  </Card>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </Fragment>
+    );
+  };
+
+  const searchBlockHeight = windowSize.width > 1200 ? 400 : 250;
+  const searchBarPadding = windowSize.width > 1200 ? "20%" : "10%";
+
+  return (
+    <Fragment>
+      <div className="search-block-container">
+        <img
+          src={searchbarbg}
+          alt=""
+          className="search-block-img"
+          style={{ height: searchBlockHeight }}
+        />
+        <div className="search-block-back-layer"></div>
+        <div className="search-block-front-layer">
+          <p
+            className={
+              "search-title" + (windowSize.width > 1200 ? "" : "-small")
+            }
+          >
+            Where do you want to go?
+          </p>
+          <div
+            className="search-container"
+            style={{
+              paddingLeft: searchBarPadding,
+              paddingRight: searchBarPadding,
+            }}
+          >
+            <input
+              type="text"
+              className="search-bar"
+              placeholder="Search here ... "
+            />
+          </div>
+        </div>
+      </div>
+      <div className="py-4 px-5 home-page">
+        {renderFirstRow()}
+        {renderSecondRow()}
       </div>
     </Fragment>
   );
