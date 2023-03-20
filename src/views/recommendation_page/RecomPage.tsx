@@ -5,7 +5,7 @@ import Image from "react-bootstrap/Image";
 import { placeholderRecomPage } from "./constants";
 import "./RecomPage.scss";
 import { IRecomFilter, IRecomPageProduct } from "./interfaces";
-// import star from "../../assets/star.png";
+import star from "../../assets/star.png";
 
 
 const useWindowSize = () => {
@@ -64,7 +64,7 @@ const Mapping = (product: IRecomPageProduct[]) => {
                       </p>
 
                       <div className="d-flex align-items-center">
-                        {/* <Image width={20} height={20} src={star} /> */}
+                        <Image width={20} height={20} src={star} /> 
                         <span
                           className={
                             "prdct-rating" +
