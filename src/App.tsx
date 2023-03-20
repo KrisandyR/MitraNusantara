@@ -3,6 +3,7 @@ import './App.scss';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import NavigationBar from './components';
 import Home from './views/home';
+import Packet from './views/packet-remove-later';
 
 function App() {
   return (
@@ -12,6 +13,9 @@ function App() {
         <Switch>
           <Route path={"/"} exact>
             <Home />
+          </Route>
+          <Route path={"/packet"}>
+            <Packet />
           </Route>
           {/* Add new page here */}
           {/* <Route path={"/example"} exact>
