@@ -66,7 +66,9 @@ const NavigationBar = () => {
             <Link to={"/"} style={{ textDecoration: "none", color: "black" }}>
               <div className="px-4">Home</div>
             </Link>
+            <Link to={"/about-us"} style={{ textDecoration: "none", color: "black" }}>
             <div className="px-4">About Us</div>
+            </Link>
             <div className="px-4">Booking</div>
             <div className="px-4 py-2 mx-2 navbar-login-btn">Login</div>
           </div>

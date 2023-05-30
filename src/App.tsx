@@ -5,6 +5,7 @@ import NavigationBar from './components';
 import RecommendationPage from './views/recommendation_page';
 import Home from './views/home';
 import Packet from './views/packet-remove-later';
+import AboutUs from './views/about_us'
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
           {/* Add new page here */}
           <Route path={"/recomPage"} exact>
             <RecommendationPage/>
+          </Route>
+          <Route path={'/about-us'} exact>
+            <AboutUs/>
           </Route>
           {/* <Route path={"/example"} exact>
             <Example />
